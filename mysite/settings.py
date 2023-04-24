@@ -34,12 +34,14 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'test_sessions.apps.TestSessionsConfig',
     'rest_framework',
+    'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'dj_rest_auth'
 ]
 
 MIDDLEWARE = [
