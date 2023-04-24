@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-r_9@m=(gf8yau3^0^$6khir7@@@eab_-hvh9*d9ju9sei0@d7&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', '*']
 
@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dj_rest_auth'
+    'dj_rest_auth',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
@@ -117,6 +118,7 @@ REST_FRAMEWORK = {
    'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAdminUser'
    ),
+   'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
 # Internationalization
