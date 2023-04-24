@@ -1,13 +1,16 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
-from rest_framework import permissions
+from rest_framework import status, permissions, filters
 from .models import Session
 from .serializers import SessionsSerializer
 
 class SessionListApiView(APIView):
     # add permission to check if user is authenticated
     permission_classes = [permissions.IsAuthenticated]
+
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = ['Date']
+    ordering = ['Date']
 
     # 1. List all
     def get(self, request, *args, **kwargs):
